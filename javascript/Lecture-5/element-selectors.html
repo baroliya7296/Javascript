@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn{
+            padding: 5px;
+            margin: 50px auto;
+            background-color: blue;
+            color: white;
+            border-radius: 24px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <button type="submit" id="btn">Click Here Me</button>
+
+    <div>This is div tag</div>
+    <div class="some">this is something div tag</div>
+    <div class="some" id="special">
+        <br>
+        <span class="some">This is span tag with some class </span>
+        This is div tag with special id and some class
+    </div>
+
+    <input type="text" name="username" id="" placeholder="Enter your username">
+
+    <div class="parent">
+        parent
+        <div class="child">
+            child
+            <div class="sub-child">Sub-child</div>
+        </div>
+    </div>
+
+    <div class="child">Outside child</div>
+    <script>
+           
+       let btn = document.getElementById('btn')
+       console.log(btn);
+
+       let divEle = document.getElementsByTagName('div');
+       console.log(divEle);
+       console.log(divEle[1]);
+
+       let someClassEles = document.getElementsByClassName('some');
+       console.log(someClassEles);
+
+       let usernameEle = document.getElementsByName('username');
+       console.log(usernameEle);
+
+       console.log(document.getElementsByClassName('child'));
+
+       let childInsideParentEle =document.querySelector('.parent .child');
+       console.log(childInsideParentEle);
+
+       let button = document.querySelector('#btn');
+       console.log(btn)
+
+       let someClassEle = document.querySelector('.some');
+       console.log(someClassEle);
+
+       let someClassElements = document.querySelectorAll('.some');
+       console.log(someClassElements);
+
+
+    </script>
+</body>
+</html>

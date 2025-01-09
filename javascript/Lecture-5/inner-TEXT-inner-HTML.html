@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+      height: 300px;
+      width: 300px;
+      background-color: darkorange;
+      border-radius: 12px;
+      margin: 50px auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    b {
+      color: aqua;
+      /* background-color: grey; */
+    }
+  </style>
+<body>
+    <div class="box">
+        Box
+        <div class="inner-box">inner-box</div>
+    </div>
+
+    <script>
+
+      const box = document.getElementsByClassName('box');
+      console.log(box[0]);
+
+      console.log(box[0].innerText);
+      box[0].innerText = 'Rahul';
+
+      console.log(box[0].textContent);
+      box[0].textContent = 'Mr_Baroliya';
+
+      console.log(box[0].innerHTML);
+      box[0].innerHTML = 'Rahul <b>Baroliya</b>';
+    </script>
+</body>
+</html>

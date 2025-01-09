@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="namste-js.js"></script>
+</head>
+<body>
+    
+  <button onclick="console.log('Button clicked')">Click Me</button>
+
+    <script>
+        console.log('Hello from body tag');
+    </script>
+
+    <script>
+        document
+         .getElementsByTagName('button')[0]
+         .addEventListener('dbclick',function(){
+            console.log('button double clicked');
+         });
+
+
+        // console.log ('this will be commit')
+
+    </script>
+</body>
+</html> 
