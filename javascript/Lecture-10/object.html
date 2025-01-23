@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // name         = [ name  , age,  city,  course, Education]
+    personDetails_1 = ['Rahul', '23', 'Babra', 'WD', 'BCOM'];
+    personDetails_2 = ['Mahesh', '28', 'Botad', 'PHP', 'BCA'];
+
+    personDetails_1.unshift('Gujrat');
+    
+    console.log(personDetails_1);
+    console.log('Name:',personDetails_1 [0]);
+    console.log('Education:',personDetails_1 [4]);
+
+      // object, it is collection of key-value pairs
+      //   - Here key should be unique
+
+      let num = 10;
+      console.log(num);
+
+      personDetails = {
+        age: 23,
+        city: 'Babra',
+        course: 'WD',
+        Education: 'BCOM',
+        name:'Rahul',
+      };
+      console.log(personDetails);
+      
+      // DOt (.) notation
+      console.log(personDetails.name);
+      
+      //   bracket ["key_name"] notation
+      console.log(personDetails['name']);
+
+
+      function printHello(){
+        console.log('Hello from function');
+      }
+      
+      obj = {
+        Character: 'a',
+        string: 'something',
+        number_int: 123,
+        number_float: 12.32,
+        variable: num,
+        boolean: true,
+        array_variable: personDetails_1,
+        array: ['Rahul',23,'Babra','WD','BCOM'],
+        obj_variable: personDetails,
+        object: {
+          age:45
+        },
+
+        function_name: printHello,
+        function_definition: () => {
+          console.log('Hello from function definition');
+        },
+      };
+
+      console.log(obj);
+      console.log(obj.variable);
+      console.log(obj.string);
+      console.log(obj.number_float);
+      console.log(obj.boolean);
+      console.log(obj.array);
+      console.log(obj.array_variable);
+      console.log(obj.object);
+      console.log(obj.number_int);
+
+         //   Object methods
+         console.log(Object.keys(obj)); 
+         
+         //  returns array of value
+         console.log(Object.values(obj)); 
+         
+         //   returns array of entries (key-value pairs as a separate array)
+         console.log(Object.entries(obj)); 
+
+         console.log(console);
+         console.error('this is some error');
+         console.info('this is some information');
+         console.warn('this is some warning');
+
+         console.table(obj);
+         console.table(personDetails_1);
+         console.assert(10 > 20, 'Condition is false');
+
+         arr = [1, 2, 3, 4, 5]
+         console.log(arr);
+         console.log(arr.length);
+
+         let person = {
+          play: () => {
+            console.log(Playig);
+          },
+          eat: () => {
+            console.log(Eating);
+          },
+          phone:'000000000',
+         };
+
+         let obj1 ={
+          name:'Rahul',
+          age:23,
+         };
+
+         obj1.__proto__ =  person;         
+         console.__proto__ = person;   
+         
+         console.log(obj1.name);
+         console.log(obj1.phone);
+         console.log(console);
+    </script>
+
+</body>
+</html>

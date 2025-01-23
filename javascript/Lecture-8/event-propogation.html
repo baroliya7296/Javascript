@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .parent{
+            height: 500px;
+            width: 500px;
+            background-color: tomato;
+            border: 2px solid black;
+            border-radius: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+         }
+         .child{
+            height: 300px;
+            width: 300px;
+            background-color: teal;
+            border: 2px solid black;
+            border-radius: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+         .sub-child{
+            height: 100px;
+            width: 100px;
+            border-radius: 24px;
+            background-color: yellowgreen;
+            border: 2px solid black;
+         }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <div class="sub-child"></div>
+        </div>
+    </div>
+
+
+    <script>
+        const parentEle = document.querySelector('.parent');
+        const childEle = document.querySelector('.child');
+        const subchildEle = document.querySelector('.sub-child');
+
+        const htmlEle = document.querySelector('html');
+
+         // event propagation / event bubbling, whenever an event happens it will notify all of its parents about that event, this is called event propagation (Applied by default) (Bottom to top)
+
+         subchildEle.addEventListener('click',(e) =>{
+            console.log('subChildEle Clicked');
+            
+            
+            // event.stopPropagation(), it is used to stop Propagation
+            // e.stopPropagation();
+        });
+
+        childEle.addEventListener('click',() =>{
+              console.log('ChildEle Clicked');
+        });
+
+        parentEle.addEventListener('click',() =>{
+            console.log('parentEle Clicked');
+        });
+
+        document.body.addEventListener('click',() =>{
+            console.log('Body Clicked');
+        });
+
+        htmlEle.addEventListener('click', () =>{
+            console.log('Html clicked');
+        });
+
+         //   event capturing / event trickling, whenever an event happens on any of the parent/descendants we may choose to notify all of its descendants, then it is called event capturing (Top to Bottom ) (optional, add true as third parameter in addEventListener to enable this)
+
+         subchildEle.addEventListener(
+            'click', () => {
+             console.log('subChildEle Clicked');
+            },
+            true
+         );
+
+         childEle.addEventListener(
+            'click', () => {
+             console.log('ChildEle Clicked');
+            },
+            true
+         );
+         parentEle.addEventListener(
+            'click', () => {
+             console.log('parentEle Clicked');
+            },
+            true
+         );
+         document.body.addEventListener(
+            'click', () => {
+             console.log('BodyClicked');
+            },
+            true
+         );
+         htmlEle.addEventListener(
+            'click', () => {
+             console.log('HTML Clicked');
+            },
+            true
+         );
+        </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box,
+        .box2 {
+          height: 100px;
+          width: 100px;
+          background-color: tomato;
+          border-radius: 12px;
+          margin: 50px auto;
+  
+          display: flex;
+          justify-content: center;
+          align-items: center;
+  
+          font-size: 18px;
+          font-weight: 600;
+          color: white;
+        }
+      </style>
+</head>
+<body>
+    <button class="click">click me</button>
+    <button class="dblclick">Double click</button>
+
+    <div class="box">Box</div>
+    <div class="box2">Box2</div>
+
+    <input type="text" name="username" id="" placeholder="Enter Your Name"> 
+
+    <script>
+        const clickBtn = document.querySelector('.click');
+        const dblclickBtn = document.querySelector('.dblclick');
+        const box = document.querySelector('.box');
+        const box2 = document.querySelector('.box2');
+        const userName = document.getElementsByName('username')[0];
+
+        // const userName = document.querySelector('input[name="username"]');
+        // console.log(userName);
+
+        clickBtn.onclick = () => {
+            console.log('Button clicked');
+        };
+
+        dblclickBtn.onclick = () => {
+            console.log('Button dbl Clicked');
+        };
+
+        // box.onmouseover = () =>{
+        //     console.log ('Box Hovered');
+        //     box.style.backgroundColor = 'teal';
+        // };
+        box.onmouseover = () =>{
+            console.log ('Mouse entered in Box');
+            box.style.backgroundColor = 'teal';
+        };
+        box.onmouseleave = () =>{
+            console.log ('Mouse left the Box');
+            box.style.backgroundColor = 'tomato';
+        };
+
+        // userName.onchange = () =>{
+        //     console.log('Username value changed');
+        //     console.log('username.value');
+        // };
+
+        userName.onpoint = () => {
+            console.log('userName.value');
+        };
+        window.onload = () => {
+            console.log('window loaded');
+        };
+        userName.addEventListener('focus', () =>{
+            console.log('Username focused');
+        });
+        
+        userName.addEventListener('blur', () =>{
+            console.log('Username blurred');
+        });
+
+        box2.addEventListener('click',(event) =>{
+            console.log('Box clicked');
+            console.log('event');
+        });
+
+        document.addEventListener('keydown', (e) =>{
+            console.log(e);
+        });
+
+    </script>
+</body>
+</html>
